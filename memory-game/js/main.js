@@ -1,23 +1,26 @@
 
 
-var cards = ["qween","qween","king","king"];
+var cards = [{rank:"qween",suit:"hearts",cardImage:"images/queen-of-hearts.png"},{rank:"qween",suit:"diamonds",cardImage:"images/queen-of-diamonds.png"},{rank:"king",suit:"hearts",cardImage:"images/king-of-hearts.png"},{rank:"king",suit:"diamond",cardImage:"images/king-of-diamonds.png"}];
+
 var cardsInPlay = [];
 var cardId;
 
 var checkForMatch = function() {
 
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-  		console.log("You found a match!");
+  		alert("You found a match!");
 	} 	else {
-  			console.log("Sorry, try again.");
+  			alert("Sorry, try again.");
 			}
 } 
 
 var flipCard = function(cardId){
 
 
-	console.log("User flipped "+ cards[cardId]);
-	cardsInPlay.push(cards[cardId]);
+	console.log("User flipped "+ cards[cardId].rank);
+	console.log(" "+ cards[cardId].suit);
+	console.log(" "+ cards[cardId].cardImage);
+	cardsInPlay.push(cards[cardId].rank);
 
 	if (cardsInPlay.length === 2){
 		checkForMatch();
